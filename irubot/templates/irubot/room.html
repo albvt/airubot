@@ -3,16 +3,12 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Chat Room</title>
+    <title> Airu |Chat Room</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
     <style>
-    input[type=text]:focus {
-    border: 3px solid #555;
-    background-color: lightblue;
-  }
     </style>
 </head>
 <body>
@@ -20,9 +16,40 @@
     <v-app>
       <v-content>
         <v-container>
-          <textarea id="chat-log" cols="100" rows="20"></textarea><br/>
-          <input id="chat-message-input" type="text" size="100" placeholder="type here"/><br/>
-          <input id="chat-message-submit" type="button" value="Send"/>
+          <v-textarea
+          filled
+          auto-grow
+          label="Ask-Airu"
+          rows="20"
+          row-height="15"
+          background-color="pink lighten-4"
+          color="orange orange-darken-4"
+          shaped
+          id="chat-log"
+        ></v-textarea>
+        <!--  <textarea id="chat-log" cols="100" rows="20"></textarea>
+        <input id="chat-message-input" type="text" size="100" placeholder="type here"/>
+        <input  type="button" value="press-enter"/>
+      -->
+        <br/>
+          <v-text-field
+           id="chat-message-input"
+           label="type here..."
+           outlined
+           >
+           <v-icon slot="append" color="red">mdi-keyboard</v-icon>
+          </v-text-field>
+          <br/>
+          <v-btn
+          class="ma-2"
+          id="chat-message-submit"
+          outlined
+           large
+           fab
+          color="indigo">
+          <v-icon>mdi-send</v-icon>
+          </v-btn>
+
         </v-container>
       </v-content>
     </v-app>
@@ -73,4 +100,5 @@
         messageInputDom.value = '';
     };
 </script>
+
 </html>
