@@ -8,14 +8,6 @@
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-    <style>
-    input[type=text]:focus {
-    border: 3px solid #555;
-    background-color: lightblue;
-  },
-
-
-    </style>
 
 </head>
 <body>
@@ -26,9 +18,37 @@
         <v-content>
           <v-container>
             What chat room would you like to enter?<br/>
-            <input id="room-name-input" type="text" size="100" placeholder="type here"/><br/>
+            <br/>
+            <p>
+            Enter:  Airu to speak with a sweet Ankole woman bot
+            </p>
+            <br/>
+            <p>
+            Enter:  lobby to text your friend via encyption
+            </p>
+        <!--    <input id="room-name-input" type="text" size="100" placeholder="type here"/>
+                <input id="room-name-submit" type="button" value="Enter"/>
+      -->
+        <br/>
+            <v-text-field
+             id="room-name-input"
+             label="type here..."
+             outlined
+             >
+             <v-icon slot="append" color="red">mdi-keyboard</v-icon>
+            </v-text-field>
+            <br/>
+            <v-btn
+            class="ma-2"
+            id="room-name-submit"
+            outlined
+             large
+             fab
+            color="indigo">
+            <v-icon>mdi-send</v-icon>
+            </v-btn>
 
-            <input id="room-name-submit" type="button" value="Enter"/>
+
           </v-container>
         </v-content>
       </v-app>
@@ -60,3 +80,4 @@
     </script>
 </body>
 </html>
+
